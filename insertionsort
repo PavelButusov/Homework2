@@ -1,13 +1,17 @@
-def insertion_sort(arr):
-    for i in range(1, len(arr)):
-        while i > 0 and arr[i] < arr[i - 1]:
-            arr[i], arr[i - 1] = arr[i - 1], arr[i]
+def insertion(n):
+    for i in range(1, len(n)):
+        while i > 0 and n[i] < n[i - 1]:
+            n[i], n[i - 1] = n[i - 1], n[i]
             i -= 1
 
-    return arr
+    return n
 
 if __name__ == '__main__':
-    my_arr = [1, 5, 2, 3, 4, 0]
-    result = insertion_sort(my_arr)
-    print(result)
+    lst = [35,5,6,12,55,24,1]
+    res = insertion(lst)
+    print(res)
     
+# Сложность O(n ** 2)    
+# Элементы просматриваются по одному и каждый новый размещается среди уже упорядоченных
+# Довольно простой метод, похож на пузырьковый с тем отличием, что элемент, который берется,
+# сравнивается со всеми, что "позади".
