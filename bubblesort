@@ -1,12 +1,16 @@
-def bubble_sort(arr):
-    for i in range(len(arr)):
-        for j in range(len(arr) - 1, i, -1):
-            if arr[j] < arr[j-1]:
-                arr[j], arr[j-1] = arr[j-1], arr[j]
+def bubble(n):
+    for i in range(len(n)):
+        for j in range(len(n) - 1, i, -1):
+            if n[j] < n[j-1]:
+                n[j], n[j-1] = n[j-1], n[j]
 
-    return arr
+    return n
 
 if __name__ == '__main__':
-    my_arr = [0, 5, 1, 9, 2, 6, 4]
-    result = bubble_sort(my_arr)
-    print(result)
+    lst = [5,71,4,64,3,34,8]
+    res = bubble(lst)
+    print(res)
+
+# По факту самый больший элемент перемещаем по списку, отправляя его все выше и выше
+# последовательно сравнивая один элемент с другим
+# это довольно простой и тривиальный для понимания метод сортировки
